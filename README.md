@@ -1,2 +1,1 @@
-# IH14
-Submission
+# How to use RCB-4 with Servomotor.
