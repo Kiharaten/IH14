@@ -6,11 +6,15 @@ from Rcb4BaseLib import Rcb4BaseLib            #Rcb4BaseLib.pyの中のRcb4BaseL
 import time                   #timeが使えるように宣言
 
 rcb4 = Rcb4BaseLib()      #rcb4をインスタンス(定義)
-        
+
+#ポートをオープン
 rcb4.open('/dev/ttyAMA0',115200,1.3)  #(portName,bundrate,timeout(s))
 #rcb4.open('/dev/ttyUSB0',115200,1.3)
 
 if rcb4.checkAcknowledge() == True:  #通信が返ってきたとき
+    print ('checkAcknowledge OK')
+    print ('Version    -->' ,rcb4.Version)
+    time.sleep(0.5)
 
     print ('MotionPlay(1)')
     rcb4.motionPlay(1)       #モーション番号1を再生
@@ -30,6 +34,5 @@ if rcb4.checkAcknowledge() == True:  #通信が返ってきたとき
     
 else:  #通信が返ってきていないときはエラー
     print ('checkAcknowledge error')
-  
-   
+
 rcb4.close()

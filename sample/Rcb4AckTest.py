@@ -3,7 +3,6 @@ import sys
 sys.path.append('../Rcb4Lib') #Rcb4Libの検索パスを追加
 
 from Rcb4BaseLib import Rcb4BaseLib            #Rcb4BaseLib.pyの中のRcb4BaseLibが使えるように設定
-
 import time                   #timeが使えるように宣言
 
 rcb4 = Rcb4BaseLib()      #rcb4をインスタンス(定義)
@@ -18,7 +17,6 @@ if rcb4.checkAcknowledge() == True:
     print ('Version    -->' ,rcb4.Version)   
 else:
     print ('checkAcknowledge error')
-   
-   
+
 rcb4.close()
 
